@@ -1,7 +1,6 @@
 # NITJ Research Admin Dashboard
 
-A comprehensive Research Analytics Dashboard built using Streamlit and Plotly.  
-This tool is designed for academic institutions (specifically customized for NIT Jalandhar) to track, visualize, and analyze faculty research performance such as publications, citations, H-index, and global collaborations.
+A comprehensive Research Analytics Dashboard built using Streamlit and Plotly. This application is designed for academic institutions (specifically customized for NIT Jalandhar) to track, visualize, and analyze faculty research performance such as publications, citations, H-index, and global collaborations.
 
 ---
 
@@ -15,22 +14,22 @@ This tool is designed for academic institutions (specifically customized for NIT
 - Option to load built-in demo data for testing.
 
 ### Impact Leaderboard
-- Automatic ranking of faculty based on an “Impact Score”:
+- Automated ranking based on an Impact Score:
   - Citations (40%)
   - H-Index (40%)
-  - Publication count (20%)
+  - Total Publications (20%)
 
 ### Advanced Analytics
 - Department-wise research performance.
-- H-Index distribution (box plots).
-- “Quantity vs. Quality” scatter analysis.
-- Global collaboration maps (choropleth).
+- H-index distribution box plots.
+- “Quantity vs Quality” scatter visualization.
+- Global collaboration maps.
 
 ### Smart Search
-- Fuzzy name search using `thefuzz` for handling typos.
+- Fuzzy search for faculty names using `thefuzz`.
 
 ### EduAdmin Theme
-- Clean and simple UI enhanced with custom CSS.
+- Clean, minimal UI with custom CSS styling.
 
 ---
 
@@ -38,7 +37,7 @@ This tool is designed for academic institutions (specifically customized for NIT
 - Python 3.8+
 - Streamlit
 - Pandas
-- Plotly (Express & Graph Objects)
+- Plotly
 - TheFuzz
 - NumPy
 
@@ -47,67 +46,77 @@ This tool is designed for academic institutions (specifically customized for NIT
 ## Installation & Setup
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/nitj-research-dashboard.git
+git clone https://github.com/yourusername/nitj-research-dashboard.git  
 cd nitj-research-dashboard
-2. Create a Virtual Environment (optional)
+
+### 2. Create a Virtual Environment (optional)
 python -m venv venv
 
-# Windows
+### Activate the environment  
+Windows:  
 venv\Scripts\activate
 
-# Mac/Linux
+Mac/Linux:  
 source venv/bin/activate
-3. Install Dependencies
-bash
-Copy code
+
+### 3. Install Dependencies
 pip install streamlit pandas plotly numpy thefuzz
-4. Run the Dashboard
-bash
-Copy code
+
+### 4. Run the Dashboard
 streamlit run app.py
-Data Format (CSV Requirements)
-Column names do not need to match exactly; they can be mapped in the sidebar.
-The data should ideally contain:
 
-Column Name	Description	Type
-name	Faculty Name	String
-department	Department (CSE, ECE, etc.)	String
-designation	Job title (Professor, etc.)	String
-total_publications	Number of papers	Integer
-citations_box	Total citations	Integer
-h_index	H-Index	Integer
+---
 
-Note:
-If the CSV does not include I10_Index, Research_Area, or Country, the app will generate default values to avoid breaking visualizations.
+## Data Format (CSV)
 
-Image Assets
-The app looks for the following images in the root directory for the Faculty Profile section:
+Your CSV does not need exact column names since you can map fields in the sidebar.  
+The recommended fields are:
 
-director.jpg
+| Column Name        | Description                     | Type    |
+|--------------------|---------------------------------|---------|
+| name               | Faculty Name                    | String  |
+| department         | Department Name                 | String  |
+| designation        | Job Title                       | String  |
+| total_publications | Publication Count               | Integer |
+| citations_box      | Total Citations                 | Integer |
+| h_index            | H-Index                         | Integer |
 
-banalaxmi mam.jpeg
+Note:  
+If I10_Index, Research_Area, or Country are missing, defaults are generated so charts do not break.
 
-If these are not found, the dashboard falls back to default placeholder images.
-You can customize this by placing your own images or updating the filenames in the code (around lines 304–305).
+---
 
-Usage Guide
-Sidebar Configuration
-Load demo data to try the dashboard immediately.
+## Image Assets
 
-Or upload your CSV file.
+Place the following images in the project root for the Faculty Profile page:
 
-Use dropdown menus to map your columns correctly.
+- director.jpg  
+- banalaxmi mam.jpeg  
 
-Navigation Tabs
-Overview: General stats and top contributors.
+If missing, default placeholder images are used.  
+You may replace filenames or update them in the code (around lines 304–305).
 
-Leaderboard: Ranking based on impact score.
+---
 
-Analytics: Charts, department insights, distribution plots.
+## Usage Guide
 
-Faculty Profile: Search and view individual faculty details.
+### Sidebar
+- Load demo data immediately OR upload your own CSV.
+- Map CSV columns using dropdowns.
 
-Contribution
-Contributions are welcome. Feel free to open issues or submit pull requests.
+### Tabs
+- **Overview:** Top stats & quick insights.  
+- **Leaderboard:** Faculty ranked by Impact Score.  
+- **Analytics:** Department charts, scatter plots, H-index distributions.  
+- **Faculty Profile:** Search & view individual faculty details.
 
+---
+
+## Contribution
+Contributions are welcome!  
+Feel free to submit issues or pull requests.
+
+---
+
+## License
+Add your preferred license information here.
